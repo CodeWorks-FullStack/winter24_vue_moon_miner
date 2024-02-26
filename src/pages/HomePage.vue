@@ -18,20 +18,21 @@
 
 <script>
 import { ref } from 'vue';
-
+import { AppState } from '../AppState.js'
+import { cheeseService } from '../services/CheeseService.js'
 export default {
+
   setup() {
     // NOTE private
     // const cheese = ref(0)
 
-
     return {
       // NOTE public
+      cheese: AppState.cheese,
 
       mineCheese() {
         // cheese.value++
-        // console.log('cheese object', cheese);
-        // console.log('cheese value', cheese.value);
+        cheeseService.mineCheese()
       }
     }
   }
