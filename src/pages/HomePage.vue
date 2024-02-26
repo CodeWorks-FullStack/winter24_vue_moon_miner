@@ -13,6 +13,34 @@
         <h2 class="mt-2">Cheese: 🧀{{ cheese }}</h2>
       </div>
     </section>
+
+    <section class="row">
+      <div v-for="upgrade in clickUpgrades" :key="upgrade.name" class="col-md-6 mb-2">
+        <div class="bg-info p-4 rounded shadow">
+          <h3 class="text-dark text-center">
+            {{ upgrade.name }}
+            <button class="btn btn-primary">Buy Upgrade</button>
+          </h3>
+          <h4 class="text-dark text-center">
+            {{ upgrade.price }} cheese | {{ upgrade.quantity }} qty | +{{ upgrade.multiplier }} cheese per click
+          </h4>
+        </div>
+      </div>
+
+      <div v-for="upgrade in autoUpgrades" :key="upgrade.name" class="col-md-6 mb-2">
+        <div class="bg-warning p-4 rounded shadow">
+          <h3 class="text-dark text-center">
+            {{ upgrade.name }}
+            <button class="btn btn-primary">Buy Upgrade</button>
+          </h3>
+          <h4 class="text-dark text-center">
+            {{ upgrade.price }} cheese | {{ upgrade.quantity }} qty | +{{ upgrade.multiplier }} cheese per 3 seconds
+          </h4>
+        </div>
+      </div>
+    </section>
+
+
   </div>
 </template>
 
@@ -30,6 +58,9 @@ export default {
       // NOTE public
       // cheese: computed(() => { return AppState.cheese }), // explicit return
       cheese: computed(() => AppState.cheese), // implied return
+      clickUpgrades: computed(() => AppState.clickUpgrades),
+      autoUpgrades: computed(() => AppState.autoUpgrades),
+
 
       mineCheese() {
         // cheese.value++
