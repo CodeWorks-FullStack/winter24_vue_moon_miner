@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js"
 
+// REVIEW not much has changed here...
 class UpgradesService {
   purchaseUpgrade(upgradeToPurchase) {
     if (upgradeToPurchase.price > AppState.cheese) {
@@ -18,9 +19,6 @@ class UpgradesService {
     return total
   }
 
-  collectAuto() {
-    AppState.cheese += this.generateUpgradeTotal(AppState.autoUpgrades)
-  }
 }
 
 export const upgradesService = new UpgradesService()

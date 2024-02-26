@@ -2,6 +2,7 @@ import { reactive } from 'vue'
 import { Upgrade } from './models/Upgrade.js'
 
 // NOTE AppState is a reactive object to contain app level data
+// NOTE properties from AppState can be computed in to vue components for reactivity
 export const AppState = reactive({
   user: {},
   /** @type {import('./models/Account.js').Account} */

@@ -1,6 +1,7 @@
 import { AppState } from "../AppState.js"
 import { upgradesService } from "./UpgradesService.js"
 
+// REVIEW not much has changed here...
 class CheeseService {
   mineCheese() {
     AppState.cheese++
@@ -8,6 +9,12 @@ class CheeseService {
     const clickTotal = upgradesService.generateUpgradeTotal(AppState.clickUpgrades)
 
     AppState.cheese += clickTotal
+  }
+
+
+  collectAuto() {
+    const autoTotal = this.generateUpgradeTotal(AppState.autoUpgrades)
+    AppState.cheese += autoTotal
   }
 }
 
