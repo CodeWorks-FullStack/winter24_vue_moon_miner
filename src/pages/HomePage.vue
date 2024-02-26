@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { AppState } from '../AppState.js'
 import { cheeseService } from '../services/CheeseService.js'
 export default {
@@ -28,7 +28,8 @@ export default {
 
     return {
       // NOTE public
-      cheese: AppState.cheese,
+      // cheese: computed(() => { return AppState.cheese }),
+      cheese: computed(() => AppState.cheese),
 
       mineCheese() {
         // cheese.value++
