@@ -22,17 +22,16 @@ import { ref } from 'vue';
 export default {
   setup() {
     // NOTE private
-    const cheese = ref(0)
+    // const cheese = ref(0)
 
 
     return {
       // NOTE public
-      cheese,
 
       mineCheese() {
-        cheese.value++
-        console.log('cheese object', cheese);
-        console.log('cheese value', cheese.value);
+        // cheese.value++
+        // console.log('cheese object', cheese);
+        // console.log('cheese value', cheese.value);
       }
     }
   }
