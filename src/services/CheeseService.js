@@ -13,7 +13,7 @@ class CheeseService {
 
 
   collectAuto() {
-    const autoTotal = this.generateUpgradeTotal(AppState.autoUpgrades)
+    const autoTotal = upgradesService.generateUpgradeTotal(AppState.autoUpgrades)
     AppState.cheese += autoTotal
   }
 }
