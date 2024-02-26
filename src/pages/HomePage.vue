@@ -28,8 +28,8 @@ export default {
 
     return {
       // NOTE public
-      // cheese: computed(() => { return AppState.cheese }),
-      cheese: computed(() => AppState.cheese),
+      // cheese: computed(() => { return AppState.cheese }), // explicit return
+      cheese: computed(() => AppState.cheese), // implied return
 
       mineCheese() {
         // cheese.value++
